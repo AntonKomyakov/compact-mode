@@ -178,11 +178,30 @@ function drawMobileNav() {
   ');      
 }
 
-function drawNav() {
+function drawNav(iActiveState) {
+
+  var sState1 ='';
+  var sState2 = '';
+  var sState3 = '';
+
+  switch (iActiveState) {
+    case 1:
+      sState1 = "active";
+      break;
+    case 2:
+      sState2 = "active";
+      break;
+    case 3:
+      sState3 = "active";
+      break;
+  }
+  console.log('iActiveState:' + iActiveState); 
+  console.log('sState2:' + sState3); 
+
   document.write('<ul class="right"> <!-- hide-on-med-and-down -->\
-  <li><a href="index.html">Default</a></li>\
-  <li><a href="small.html">Small</a></li>\
-  <li><a href="pivot.html">Pivot</a></li>\
+  <li class="' + sState1 + '"><a href="index.html">Default: Table</a></li>\
+  <li class="' + sState2 + '"><a href="small.html">Small: Table</a></li>\
+  <li class="' + sState3 + '"><a href="pivot.html">X-Small: Pivot</a></li>\
   <li></div>\
 </ul>\
 ');
