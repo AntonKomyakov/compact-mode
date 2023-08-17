@@ -74,6 +74,10 @@ span.badge {
   padding-right: 16px;
 }
 
+.topnav .cm-switch-label {
+  padding-right: 16px;
+}
+
 td {
   text-overflow: ellipsis;
   overflow: hidden;
