@@ -70,6 +70,10 @@ span.badge {
   justify-content: flex-end;
 }
 
+.topnav .switch {
+  padding-right: 16px;
+}
+
 td {
   text-overflow: ellipsis;
   overflow: hidden;
