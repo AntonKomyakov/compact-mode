@@ -137,7 +137,7 @@ function writePivotTable(){
   document.write('<th>Customer</th>');
   document.write('<th>Measures</th>');
   document.write('<th>#</th>');
-  for ( let w=1; w <= 25; w++ ) {
+  for ( let w=1; w <= 35; w++ ) {
     document.write('<th class="right-align">WK ',w,'</th>');
   }
 
@@ -151,7 +151,7 @@ function writePivotTable(){
         for ( let m=1; m <= 10; m++) {
           document.write('<td>Measure ',m,'</td>');
           document.write('<td>',(p-1)*40+(l-1)*20+(c-1)*10+m,'</td>');
-          for ( let w=1; w <= 25; w++){
+          for ( let w=1; w <= 35; w++){
             if (m=== 10){
               document.write('<td><i class="green-text tiny material-icons">',Math.random()>0.5?'check_circle':'','</i></td>');
             } else {
