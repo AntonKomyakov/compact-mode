@@ -85,9 +85,9 @@ function writeMediumTable(){
   document.write('<th>Status</th>');
   document.write('<th>Is Reviewed</th>');
   document.write('<th>Category</th>');
-  document.write('<th class="right-align">Finantial Impact (m)</th>');
-  document.write('<th class="right-align">Finantial Impact (m)</th>');
-  document.write('<th class="right-align">Finantial Impact (m)</th>');
+  document.write('<th class="right-align">Financial Impact (m)</th>');
+  document.write('<th class="right-align">Financial Impact (m)</th>');
+  document.write('<th class="right-align">Financial Impact (m)</th>');
 
   for(let colNum = 1; colNum < 50; colNum++){
     document.write('<tr>');
@@ -111,9 +111,9 @@ function writeSmallTable(){
   document.write('<th>Status</th>');
   document.write('<th>Is Reviewed</th>');
   document.write('<th>Category</th>');
-  document.write('<th class="right-align">Finantial Impact (m)</th>');
-  document.write('<th class="right-align">Finantial Impact (m)</th>');
-  document.write('<th class="right-align">Finantial Impact (m)</th>');
+  document.write('<th class="right-align">Financial Impact (m)</th>');
+  document.write('<th class="right-align">Financial Impact (m)</th>');
+  document.write('<th class="right-align">Financial Impact (m)</th>');
 
   for(let colNum = 1; colNum < 50; colNum++){
     document.write('<tr>');
@@ -137,7 +137,7 @@ function writePivotTable(){
   document.write('<th>Customer</th>');
   document.write('<th>Measures</th>');
   document.write('<th>#</th>');
-  for ( let w=1; w <= 25; w++ ) {
+  for ( let w=1; w <= 35; w++ ) {
     document.write('<th class="right-align">WK ',w,'</th>');
   }
 
@@ -151,7 +151,7 @@ function writePivotTable(){
         for ( let m=1; m <= 10; m++) {
           document.write('<td>Measure ',m,'</td>');
           document.write('<td>',(p-1)*40+(l-1)*20+(c-1)*10+m,'</td>');
-          for ( let w=1; w <= 25; w++){
+          for ( let w=1; w <= 35; w++){
             if (m=== 10){
               document.write('<td><i class="green-text tiny material-icons">',Math.random()>0.5?'check_circle':'','</i></td>');
             } else {
