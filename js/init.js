@@ -85,9 +85,9 @@ function writeMediumTable(){
   document.write('<th>Status</th>');
   document.write('<th>Is Reviewed</th>');
   document.write('<th>Category</th>');
-  document.write('<th class="right-align">Finantial Impact (m)</th>');
-  document.write('<th class="right-align">Finantial Impact (m)</th>');
-  document.write('<th class="right-align">Finantial Impact (m)</th>');
+  document.write('<th class="right-align">Financial Impact (m)</th>');
+  document.write('<th class="right-align">Financial Impact (m)</th>');
+  document.write('<th class="right-align">Financial Impact (m)</th>');
 
   for(let colNum = 1; colNum < 50; colNum++){
     document.write('<tr>');
@@ -111,9 +111,9 @@ function writeSmallTable(){
   document.write('<th>Status</th>');
   document.write('<th>Is Reviewed</th>');
   document.write('<th>Category</th>');
-  document.write('<th class="right-align">Finantial Impact (m)</th>');
-  document.write('<th class="right-align">Finantial Impact (m)</th>');
-  document.write('<th class="right-align">Finantial Impact (m)</th>');
+  document.write('<th class="right-align">Financial Impact (m)</th>');
+  document.write('<th class="right-align">Financial Impact (m)</th>');
+  document.write('<th class="right-align">Financial Impact (m)</th>');
 
   for(let colNum = 1; colNum < 50; colNum++){
     document.write('<tr>');

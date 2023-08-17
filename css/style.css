@@ -74,6 +74,7 @@ td {
   text-overflow: ellipsis;
   overflow: hidden;
   text-wrap: nowrap;
+  color: #2C323E;
 }
 
 
