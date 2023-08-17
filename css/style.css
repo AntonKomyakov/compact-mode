@@ -48,22 +48,6 @@ html {
   }
 }
 
-
-td, th {
-  padding: 4px 12px;
-  display: table-cell;
-  text-align: left;
-  vertical-align: middle;
-  border-radius: 2px;
-  height: 48px;
-  font-weight:400;
-}
-
-th {
-  font-size: 12px;
-}
-
-
 span.badge {
   font-weight: 300;
   font-size: 1rem;
@@ -71,4 +55,32 @@ span.badge {
   background-color: #e6e6e6;
   border:#525252 1px solid;
   border-radius: 12px;
+}
+
+.cmtable {
+  overflow-x: scroll;
+}
+
+.topnav {
+  display: flex;
+  width: 100%;
+  /* align-content: space-between; */
+  flex-direction: row;
+  justify-content: flex-end;
+}
+
+td {
+  text-overflow: ellipsis;
+  overflow: hidden;
+  text-wrap: nowrap;
+}
+
+
+
+i {
+  vertical-align: middle;
+}
+
+.valign-top {
+  vertical-align: top;
 }
