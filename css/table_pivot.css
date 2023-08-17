@@ -1,0 +1,35 @@
+/* Custom Stylesheet */
+/**
+ * Use this file to override Materialize files so you can update
+ * the core Materialize files in the future
+ *
+ * Made By MaterializeCSS.com
+ */
+
+ span.badge {
+  font-weight: 300;
+  font-size: 1rem;
+  line-height: 20px;
+}
+
+td, th {
+  padding: 0px 4px;
+  display: table-cell;
+  text-align: left;
+  vertical-align: middle;
+  border-radius: 2px;
+  height: 28px;
+  font-weight:400;
+}
+
+th {
+  font-size: 12px;
+}
+
+span.badge {
+  font-size: 0.85rem;
+}
+
+i.tiny {
+  font-size: 1.25rem;
+}
