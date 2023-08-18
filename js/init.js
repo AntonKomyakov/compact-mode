@@ -77,7 +77,7 @@ function changeDensity(evt) {
   
 }
 
-function writeMediumTable(){
+function drawMediumTable(){
   document.write('<table class="striped">');
 
   document.write('<th class="right-align">Line Number</th>');
@@ -103,7 +103,8 @@ function writeMediumTable(){
     }
   document.write("</table>");
 }
-function writeSmallTable(){
+
+function drawSmallTable(){
   document.write('<table class="striped">');
 
   document.write('<th class="right-align">Line Number</th>');
@@ -129,7 +130,8 @@ function writeSmallTable(){
     }
   document.write("</table>");
 }
-function writePivotTable(){
+
+function drawPivotTable(){
   document.write('<table class="striped">');
 
   document.write('<th>Item</th>');
@@ -180,7 +182,7 @@ function drawMobileNav() {
 
 function drawNav(iActiveState) {
 
-  var sState1 ='';
+  var sState1 = '';
   var sState2 = '';
   var sState3 = '';
 
