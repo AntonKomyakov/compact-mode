@@ -77,7 +77,7 @@ span.badge {
 td {
   text-overflow: ellipsis;
   overflow: hidden;
-  text-wrap: nowrap;
+  white-space: nowrap;
   color: #2C323E;
 }
 
