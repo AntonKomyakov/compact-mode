@@ -80,10 +80,10 @@ function changeDensity(evt) {
 function drawMediumTable(){
   document.write('<table class="striped">');
 
-  document.write('<th class="right-align">Line Number</th>');
+  document.write('<th class="right-align">No</th>');
   document.write('<th>Name</th>');
   document.write('<th>Status</th>');
-  document.write('<th>Is Reviewed</th>');
+  document.write('<th class="center-align">Is Reviewed</th>');
   document.write('<th>Category</th>');
   document.write('<th class="right-align">Financial Impact (m)</th>');
   document.write('<th class="right-align">Financial Impact (m)</th>');
@@ -94,7 +94,7 @@ function drawMediumTable(){
     document.write('<td class="right-align">',colNum,'</td>');
     document.write('<td>Demand forecast for Smarties at the Windsor DC Jan 20-W2 deviates -22% from last year\'s sales.</td>');
     document.write('<td><span class="badge">Open</span></td>');
-    document.write('<td><i class="green-text small material-icons">',Math.random()>0.5?'check_circle':'','</i></td>');
+    document.write('<td class="center-align"><i class="green-text small material-icons">',Math.random()>0.5?'check_circle':'','</i></td>');
     document.write('<td>Revenue Gap 20%</td>');
     document.write('<td class="right-align">',(Math.random()*1000000).toFixed(2),'</td>');
     document.write('<td class="right-align">',(Math.random()*1000000).toFixed(2),'</td>');
@@ -107,10 +107,10 @@ function drawMediumTable(){
 function drawSmallTable(){
   document.write('<table class="striped">');
 
-  document.write('<th class="right-align">Line Number</th>');
+  document.write('<th class="right-align">No</th>');
   document.write('<th>Name</th>');
   document.write('<th>Status</th>');
-  document.write('<th>Is Reviewed</th>');
+  document.write('<th class="center-aligned">Is Reviewed</th>');
   document.write('<th>Category</th>');
   document.write('<th class="right-align">Financial Impact (m)</th>');
   document.write('<th class="right-align">Financial Impact (m)</th>');
@@ -121,7 +121,7 @@ function drawSmallTable(){
     document.write('<td class="right-align">',colNum,'</td>');
     document.write('<td>Demand forecast for Smarties at the Windsor DC Jan 20-W2 deviates -22% from last year\'s sales.</td>');
     document.write('<td><span class="badge">Open</span></td>');
-    document.write('<td><i class="green-text xsmall material-icons">',Math.random()>0.5?'check_circle':'','</i></td>');
+    document.write('<td class="center-aligned"><i class="green-text xsmall material-icons">', Math.random()>0.5 ? 'check_circle' : '', '</i></td>');
     document.write('<td>Revenue Gap 20%</td>');
     document.write('<td class="right-align">',(Math.random()*1000000).toFixed(2),'</td>');
     document.write('<td class="right-align">',(Math.random()*1000000).toFixed(2),'</td>');
