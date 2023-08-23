@@ -85,12 +85,34 @@ td {
   color: #2C323E;
 }
 
+td.rnumber,th.rnumber {
+  width:40px;
+}
 
+td.status,th.status {
+  width:72px;
+}
+
+td.boolean,th.boolean {
+  width:48px;
+}
+
+table.fixed {
+  table-layout: fixed;
+}
+.topnav .select-wrapper input.select-dropdown {
+  color:#ffffff;
+  font-size:1rem;
+}
 
 i {
   vertical-align: middle;
 }
 
+i.small {
+  font-size:24px;
+}
 .valign-top {
   vertical-align: top;
 }
+

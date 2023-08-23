@@ -3,7 +3,13 @@
 
     $('.sidenav').sidenav();
     $('#cm-switch').on('click',changeDensity);
-
+    if (page === 'pivot') {
+      var fontSelector = $('#fontSelector').formSelect();
+      var instance = M.FormSelect.getInstance(fontSelector);
+      fontSelector.on('change', changeFont);
+  
+    }
+    
   }); // end of document ready
   
 })(jQuery); // end of jQuery name space
@@ -61,12 +67,14 @@ function changeDensity(evt) {
       chipLineHeight = 12;
       cellVPadding = 0;
       cellHPadding = 4;
+      $('.fontSelectorContainer').show();
     } else {
       rowHeight = 28;
       chipHeight = 24 
       chipLineHeight = 20;
       cellVPadding = 0;
       cellHPadding = 8;
+      $('.fontSelectorContainer').hide();
     }
     $('th,td').css({'height':rowHeight+'px', 'line-height':rowHeight+'px', 'padding':cellVPadding+'px '+cellHPadding+'px'});
     $('span.badge').css({'height':chipHeight+'px','line-height':chipLineHeight+'px'});
@@ -77,28 +85,52 @@ function changeDensity(evt) {
   
 }
 
-function drawMediumTable(){
-  document.write('<table class="striped">');
+function changeFont() {
+  let selectedFont = $('#fontSelector').find(':selected').val();
+  console.log(selectedFont);
+  $('td').css({'font-size':selectedFont+'px'});
+}
 
-  document.write('<th class="right-align">No</th>');
-  document.write('<th>Name</th>');
-  document.write('<th>Status</th>');
-  document.write('<th class="center-align">Is Reviewed</th>');
-  document.write('<th>Category</th>');
-  document.write('<th class="right-align">Financial Impact (m)</th>');
-  document.write('<th class="right-align">Financial Impact (m)</th>');
-  document.write('<th class="right-align">Financial Impact (m)</th>');
+function drawMediumTable(){
+  document.write('<table class="striped fixed">');
+
+  document.write('<th class="rnumber right-align">No</th>');
+  document.write('<th>String</th>');
+  document.write('<th class="status">Status</th>');
+  document.write('<th>Date</th>');
+  document.write('<th>Date</th>');
+  document.write('<th>Date</th>');
+  document.write('<th>Date</th>');
+  document.write('<th class="boolean center-align">Bool</th>');
+  document.write('<th class="boolean center-align">Bool</th>');
+  document.write('<th>String</th>');
+  document.write('<th class="cnumber right-align">Number</th>');
+  document.write('<th class="cnumber right-align">Number</th>');
+  document.write('<th class="cnumber right-align">Number</th>');
+  document.write('<th class="cnumber right-align">Number</th>');
+  document.write('<th class="cnumber right-align">Number</th>');
+  document.write('<th class="cnumber right-align">Number</th>');
+  document.write('<th class="cnumber right-align">Number</th>');
 
   for(let colNum = 1; colNum < 50; colNum++){
     document.write('<tr>');
-    document.write('<td class="right-align">',colNum,'</td>');
+    document.write('<td class="rnumber right-align">',colNum,'</td>');
     document.write('<td>Demand forecast for Smarties at the Windsor DC Jan 20-W2 deviates -22% from last year\'s sales.</td>');
-    document.write('<td><span class="badge">Open</span></td>');
-    document.write('<td class="center-align"><i class="green-text small material-icons">',Math.random()>0.5?'check_circle':'','</i></td>');
+    document.write('<td class="status"><span class="badge">Open</span></td>');
+    document.write('<td>01/02/2024</td>');
+    document.write('<td>01/02/2024</td>');
+    document.write('<td>01/02/2024</td>');
+    document.write('<td>01/02/2024</td>');
+    document.write('<td class="boolean center-align"><i class="green-text small material-icons">',Math.random()>0.5?'check_circle':'','</i></td>');
+    document.write('<td class="boolean center-align"><i class="green-text small material-icons">',Math.random()>0.5?'check_circle':'','</i></td>');
     document.write('<td>Revenue Gap 20%</td>');
-    document.write('<td class="right-align">',(Math.random()*1000000).toFixed(2),'</td>');
-    document.write('<td class="right-align">',(Math.random()*1000000).toFixed(2),'</td>');
-    document.write('<td class="right-align">',(Math.random()*1000000).toFixed(2),'</td>');
+    document.write('<td class="cnumber right-align">',(Math.random()*1000000).toFixed(2),'</td>');
+    document.write('<td class="cnumber right-align">',(Math.random()*1000000).toFixed(2),'</td>');
+    document.write('<td class="cnumber right-align">',(Math.random()*1000000).toFixed(2),'</td>');
+    document.write('<td class="cnumber right-align">',(Math.random()*1000000).toFixed(2),'</td>');
+    document.write('<td class="cnumber right-align">',(Math.random()*1000000).toFixed(2),'</td>');
+    document.write('<td class="cnumber right-align">',(Math.random()*1000000).toFixed(2),'</td>');
+    document.write('<td class="cnumber right-align">',(Math.random()*1000000).toFixed(2),'</td>');
     document.write('</tr>');
     }
   document.write("</table>");
@@ -198,8 +230,16 @@ function drawNav(iActiveState) {
       break;
   }
   console.log('iActiveState:' + iActiveState); 
-  console.log('sState2:' + sState3); 
+  console.log('sState2:' + sState2); 
 
+  if(sState3 === 'active'){
+    document.write('<div class="input-field right fontSelectorContainer">\
+      <select id="fontSelector">\
+        <option value="14">Default font</option>\
+        <option value="12">Small font</option>\
+      <select>\
+    </div>');
+  }
   document.write('<ul class="right"> <!-- hide-on-med-and-down -->\
   <li class="' + sState1 + '"><a href="index.html">Default: Table</a></li>\
   <li class="' + sState2 + '"><a href="small.html">Small: Table</a></li>\
