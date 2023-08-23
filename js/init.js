@@ -3,16 +3,19 @@
 
     $('.sidenav').sidenav();
     $('#cm-switch').on('click',changeDensity);
-    if (page === 'pivot') {
+    if (page === 'Pivot') {
       var fontSelector = $('#fontSelector').formSelect();
       var instance = M.FormSelect.getInstance(fontSelector);
       fontSelector.on('change', changeFont);
-  
+      
+      $('#fontSelectorContainer').hide();
     }
     
   }); // end of document ready
   
 })(jQuery); // end of jQuery name space
+
+var selectedFont = 14;
 
 function changeDensity(evt) {
   let rowHeight = 0;
@@ -67,14 +70,16 @@ function changeDensity(evt) {
       chipLineHeight = 12;
       cellVPadding = 0;
       cellHPadding = 4;
-      $('.fontSelectorContainer').show();
+      $('#fontSelectorContainer').show();
+      $('td').css({'font-size':selectedFont+'px'});
     } else {
       rowHeight = 28;
       chipHeight = 24 
       chipLineHeight = 20;
       cellVPadding = 0;
       cellHPadding = 8;
-      $('.fontSelectorContainer').hide();
+      $('#fontSelectorContainer').hide();
+      $('td').css({'font-size':'14px'});
     }
     $('th,td').css({'height':rowHeight+'px', 'line-height':rowHeight+'px', 'padding':cellVPadding+'px '+cellHPadding+'px'});
     $('span.badge').css({'height':chipHeight+'px','line-height':chipLineHeight+'px'});
@@ -85,8 +90,8 @@ function changeDensity(evt) {
   
 }
 
-function changeFont() {
-  let selectedFont = $('#fontSelector').find(':selected').val();
+function changeFont(evt) {
+  selectedFont = $(evt.target).find(':selected').val();
   console.log(selectedFont);
   $('td').css({'font-size':selectedFont+'px'});
 }
@@ -238,14 +243,6 @@ function drawNav(iActiveState) {
   console.log('iActiveState:' + iActiveState); 
   console.log('sState2:' + sState2); 
 
-  if(sState3 === 'active'){
-    document.write('<div class="input-field right fontSelectorContainer">\
-      <select id="fontSelector">\
-        <option value="14">Default font</option>\
-        <option value="12">Small font</option>\
-      <select>\
-    </div>');
-  }
   document.write('<ul class="right"> <!-- hide-on-med-and-down -->\
   <li class="' + sState1 + '"><a href="index.html">Default: Table</a></li>\
   <li class="' + sState2 + '"><a href="small.html">Small: Table</a></li>\
