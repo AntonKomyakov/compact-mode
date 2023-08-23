@@ -89,6 +89,14 @@ td.rnumber,th.rnumber {
   width:40px;
 }
 
+td.cnumber,th.cnumber {
+  width:95px;
+}
+
+td.date,th.date {
+  width:100px;
+}
+
 td.status,th.status {
   width:72px;
 }
@@ -100,6 +108,7 @@ td.boolean,th.boolean {
 table.fixed {
   table-layout: fixed;
 }
+
 .topnav .select-wrapper input.select-dropdown {
   color:#ffffff;
   font-size:1rem;

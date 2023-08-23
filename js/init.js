@@ -93,14 +93,15 @@ function changeFont() {
 
 function drawMediumTable(){
   document.write('<table class="striped fixed">');
+  document.write('<thead>');
 
   document.write('<th class="rnumber right-align">No</th>');
   document.write('<th>String</th>');
   document.write('<th class="status">Status</th>');
-  document.write('<th>Date</th>');
-  document.write('<th>Date</th>');
-  document.write('<th>Date</th>');
-  document.write('<th>Date</th>');
+  document.write('<th class="date">Date</th>');
+  document.write('<th class="date">Date</th>');
+  document.write('<th class="date">Date</th>');
+  document.write('<th class="date">Date</th>');
   document.write('<th class="boolean center-align">Bool</th>');
   document.write('<th class="boolean center-align">Bool</th>');
   document.write('<th>String</th>');
@@ -111,16 +112,19 @@ function drawMediumTable(){
   document.write('<th class="cnumber right-align">Number</th>');
   document.write('<th class="cnumber right-align">Number</th>');
   document.write('<th class="cnumber right-align">Number</th>');
+
+  document.write('</thead>');
+  document.write('<tbody>');
 
   for(let colNum = 1; colNum < 50; colNum++){
     document.write('<tr>');
     document.write('<td class="rnumber right-align">',colNum,'</td>');
     document.write('<td>Demand forecast for Smarties at the Windsor DC Jan 20-W2 deviates -22% from last year\'s sales.</td>');
     document.write('<td class="status"><span class="badge">Open</span></td>');
-    document.write('<td>01/02/2024</td>');
-    document.write('<td>01/02/2024</td>');
-    document.write('<td>01/02/2024</td>');
-    document.write('<td>01/02/2024</td>');
+    document.write('<td class="date">01/02/2024</td>');
+    document.write('<td class="date">01/02/2024</td>');
+    document.write('<td class="date">01/02/2024</td>');
+    document.write('<td class="date">01/02/2024</td>');
     document.write('<td class="boolean center-align"><i class="green-text small material-icons">',Math.random()>0.5?'check_circle':'','</i></td>');
     document.write('<td class="boolean center-align"><i class="green-text small material-icons">',Math.random()>0.5?'check_circle':'','</i></td>');
     document.write('<td>Revenue Gap 20%</td>');
@@ -132,7 +136,9 @@ function drawMediumTable(){
     document.write('<td class="cnumber right-align">',(Math.random()*1000000).toFixed(2),'</td>');
     document.write('<td class="cnumber right-align">',(Math.random()*1000000).toFixed(2),'</td>');
     document.write('</tr>');
-    }
+  }
+  document.write('</tbody>');
+  
   document.write("</table>");
 }
 
