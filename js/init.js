@@ -70,7 +70,7 @@ function changeDensity(evt) {
       chipLineHeight = 12;
       cellVPadding = 0;
       cellHPadding = 4;
-      $('#fontSelectorContainer').show();
+      $('#fontSelectorContainer').hide();
       $('td').css({'font-size':selectedFont+'px'});
     } else {
       rowHeight = 28;
