@@ -89,11 +89,11 @@ function changeDensity(evt) {
     console.log("Small page");
   } else if (page === "Pivot") {
     if(evt.target.checked){
-      rowHeight = 20;
+      rowHeight = 19;
       chipHeight = 16 
       chipLineHeight = 12;
       cellVPadding = 0;
-      cellHPadding = 4;
+      cellHPadding = 6;
       $('#fontSelectorContainer').show();
       $('td').css({'font-size':selectedFont+'px'});
     } else {

@@ -20,6 +20,7 @@ td, th {
   border-radius: 2px;
   height: 28px;
   font-weight:400;
+  border: #e0e0e0 1px solid;
 }
 
 th {
