@@ -34,3 +34,36 @@ span.badge {
 i.tiny {
   font-size: 1.25rem;
 }
+
+div.switcher-wrapper {
+  display: inline-flex;
+  align-items: center;
+}
+
+ul.font-switcher {
+  border: #dedede 1px solid;
+  border-radius: 2px;
+  margin-block-end: 12px;
+  margin-block-start: 12px;
+}
+
+ul.font-switcher li a {
+  box-shadow:none;
+}
+
+.btn-small {
+  height: 22px;
+  line-height: 22px;
+  font-size: 13px;
+  color:black;
+}
+
+.btn-small:hover {
+  background-color: #01579b;
+  color:white;
+}
+
+.activated {
+  background-color:#01579b;
+  color:white;
+}

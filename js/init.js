@@ -18,13 +18,15 @@ let badgeRules;
       fontSelector.on('change', changeFont);
       
       $('#fontSelectorContainer').hide();
+
+
       let mySheets = document.styleSheets;
       console.log(mySheets);
       stylesheet = document.styleSheets[4];
       console.log('stylesheet',stylesheet);
 
       // looping through all its rules and getting your rule
-      for(let i = 0; i < stylesheet.cssRules.length; i++) {
+     /* for(let i = 0; i < stylesheet.cssRules.length; i++) {
         if(stylesheet.cssRules[i].selectorText === 'td, th') {
           tdthRules = stylesheet.cssRules[i];
         }
@@ -32,7 +34,7 @@ let badgeRules;
       console.log('tdth styles:', tdthRules);
       // modifying the rule in the stylesheet
       //elementRules.style.setProperty('background', 'blue');
-
+*/
     }
     
   }); // end of document ready
@@ -95,6 +97,7 @@ function changeDensity(evt) {
       cellVPadding = 0;
       cellHPadding = 6;
       $('#fontSelectorContainer').show();
+      $('div.switcher-wrapper').show();
       $('td').css({'font-size':selectedFont+'px'});
     } else {
       rowHeight = 28;
@@ -103,6 +106,7 @@ function changeDensity(evt) {
       cellVPadding = 0;
       cellHPadding = 8;
       $('#fontSelectorContainer').hide();
+      $('div.switcher-wrapper').hide();
       $('td').css({'font-size':'14px'});
     }
     $('th,td').css({'height':rowHeight+'px', 'line-height':rowHeight+'px', 'padding':cellVPadding+'px '+cellHPadding+'px'});
@@ -117,6 +121,14 @@ function changeDensity(evt) {
 function changeFont(evt) {
   selectedFont = $(evt.target).find(':selected').val();
   console.log(selectedFont);
+  $('td').css({'font-size':selectedFont+'px'});
+}
+
+function setFont(evt){
+  selectedFont = evt.target.text;
+  $('ul.font-switcher li a').removeClass("activated");
+  $(evt.target).addClass("activated");
+  $(this).blur();
   $('td').css({'font-size':selectedFont+'px'});
 }
 
@@ -322,7 +334,6 @@ function drawNav(iActiveState) {
   <li class="' + sState1 + '"><a href="index.html">Default: Table</a></li>\
   <li class="' + sState2 + '"><a href="small.html">Small: Table</a></li>\
   <li class="' + sState3 + '"><a href="pivot.html">X-Small: Pivot</a></li>\
-  <li></div>\
 </ul>\
 ');
 }
@@ -346,13 +357,15 @@ function drawFontSwitcher(iActiveState) {
   }
   console.log('FontButActiveState:' + iActiveState); 
   
-  document.write('<ul class="right"> <!-- hide-on-med-and-down -->\
-  <li class="' + sState1 + '"><a class="btn" href="index.html">10</a></li>\
-  <li class="' + sState2 + '"><a class="btn" href="index.html">11</a></li>\
-  <li class="' + sState3 + '"><a class="btn" href="small.html">12</a></li>\
-  <li class="' + sState4 + '"><a class="btn" href="pivot.html">14</a></li>\
-  <li></div>\
-</ul>\
+  document.write('<div class="right switcher-wrapper">Font-size:&nbsp;<ul class="right font-switcher"> <!-- hide-on-med-and-down -->\
+  <li class="right ' + sState1 + '"><a class="btn-flat btn-small" href="#">10</a></li>\
+  <li class="right ' + sState2 + '"><a class="btn-flat btn-small" href="#">11</a></li>\
+  <li class="right ' + sState3 + '"><a class="btn-flat btn-small" href="#">12</a></li>\
+  <li class="right ' + sState4 + '"><a class="btn-flat btn-small" href="#">14</a></li>\
+  </ul></div>\
 ');
+$('ul.font-switcher a').filter(function(index) { return $(this).text() == selectedFont; }).addClass("activated");
+$('ul.font-switcher li a').on('click', setFont);
+$('div.switcher-wrapper').hide();
 
 }
