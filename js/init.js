@@ -1,5 +1,16 @@
 var selectedFont = 14;
 
+let randomString = [
+  'Optimizing inventory levels through demand planning analysis',
+  'Forecasting customer demand for better supply chain management',
+  'Using predictive analytics to improve demand planning accuracy',
+  'Collaborating with sales teams to enhance demand planning strategies',
+  'Leveraging historical data for more effective demand planning',
+  'Minimizing stockouts and overstocking with demand planning insights',
+  'Streamlining production schedules with demand planning optimization',
+  'Maximizing profitability through demand planning and inventory control',
+]
+
 // Getting the stylesheet
 let stylesheet;
 let tdthRules;
@@ -168,7 +179,7 @@ function drawMediumTable(){
     document.write('<td class="date">01/02/2024</td>');
     document.write('<td class="boolean center-align"><i class="green-text small material-icons">',Math.random()>0.5?'check_circle':'','</i></td>');
     document.write('<td class="boolean center-align"><i class="green-text small material-icons">',Math.random()>0.5?'check_circle':'','</i></td>');
-    document.write('<td>Revenue Gap 20%</td>');
+    document.write('<td>',randomString[Math.round(Math.random()*7)],'</td>');
     document.write('<td class="cnumber right-align">',(Math.random()*1000000).toFixed(2),'</td>');
     document.write('<td class="cnumber right-align">',(Math.random()*1000000).toFixed(2),'</td>');
     document.write('<td class="cnumber right-align">',(Math.random()*1000000).toFixed(2),'</td>');
@@ -219,7 +230,7 @@ function drawSmallTable(){
     document.write('<td class="date">01/02/2024</td>');
     document.write('<td class="boolean center-align"><i class="green-text small material-icons">',Math.random()>0.5?'check_circle':'','</i></td>');
     document.write('<td class="boolean center-align"><i class="green-text small material-icons">',Math.random()>0.5?'check_circle':'','</i></td>');
-    document.write('<td>Revenue Gap 20%</td>');
+    document.write('<td>',randomString[Math.round(Math.random()*7)],'</td>');
     document.write('<td class="cnumber right-align">',(Math.random()*1000000).toFixed(2),'</td>');
     document.write('<td class="cnumber right-align">',(Math.random()*1000000).toFixed(2),'</td>');
     document.write('<td class="cnumber right-align">',(Math.random()*1000000).toFixed(2),'</td>');
