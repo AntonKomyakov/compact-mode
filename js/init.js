@@ -23,21 +23,21 @@ let badgeRules;
 
     $('.sidenav').sidenav();
     $('#cm-switch').on('click',changeDensity);
+
+    $('.tooltipped').tooltip();
+
     if (page === 'Pivot') {
       var fontSelector = $('#fontSelector').formSelect();
-      var instance = M.FormSelect.getInstance(fontSelector);
       fontSelector.on('change', changeFont);
-      
+
       $('#fontSelectorContainer').hide();
 
-
       let mySheets = document.styleSheets;
-      console.log(mySheets);
       stylesheet = document.styleSheets[4];
       console.log('stylesheet',stylesheet);
 
       // looping through all its rules and getting your rule
-     /* for(let i = 0; i < stylesheet.cssRules.length; i++) {
+      /* for(let i = 0; i < stylesheet.cssRules.length; i++) {
         if(stylesheet.cssRules[i].selectorText === 'td, th') {
           tdthRules = stylesheet.cssRules[i];
         }
@@ -45,7 +45,7 @@ let badgeRules;
       console.log('tdth styles:', tdthRules);
       // modifying the rule in the stylesheet
       //elementRules.style.setProperty('background', 'blue');
-*/
+      */
     }
     
   }); // end of document ready
@@ -169,9 +169,11 @@ function drawMediumTable(){
   document.write('<tbody>');
 
   for(let colNum = 1; colNum < 50; colNum++){
+    let selectedString1 = randomString[Math.round(Math.random()*7)];
+    let selectedString2 = randomString[Math.round(Math.random()*7)];
     document.write('<tr>');
     document.write('<td class="rnumber right-align">',colNum,'</td>');
-    document.write('<td>Demand forecast for Smarties at the Windsor DC Jan 20-W2 deviates -22% from last year\'s sales.</td>');
+    document.write('<td class="cstring"><span  class="tooltipped" data-tooltip="',selectedString1,'">',selectedString1,'</span></td>');
     document.write('<td class="status"><span class="badge">Open</span></td>');
     document.write('<td class="date">01/02/2024</td>');
     document.write('<td class="date">01/02/2024</td>');
@@ -179,7 +181,7 @@ function drawMediumTable(){
     document.write('<td class="date">01/02/2024</td>');
     document.write('<td class="boolean center-align"><i class="green-text small material-icons">',Math.random()>0.5?'check_circle':'','</i></td>');
     document.write('<td class="boolean center-align"><i class="green-text small material-icons">',Math.random()>0.5?'check_circle':'','</i></td>');
-    document.write('<td>',randomString[Math.round(Math.random()*7)],'</td>');
+    document.write('<td class="cstring"><span  class="tooltipped" data-tooltip="',selectedString2,'">',selectedString2,'</span></td>');
     document.write('<td class="cnumber right-align">',(Math.random()*1000000).toFixed(2),'</td>');
     document.write('<td class="cnumber right-align">',(Math.random()*1000000).toFixed(2),'</td>');
     document.write('<td class="cnumber right-align">',(Math.random()*1000000).toFixed(2),'</td>');
@@ -220,9 +222,11 @@ function drawSmallTable(){
   document.write('<tbody>');
 
   for(let colNum = 1; colNum < 50; colNum++){
+    let selectedString1 = randomString[Math.round(Math.random()*7)];
+    let selectedString2 = randomString[Math.round(Math.random()*7)];
     document.write('<tr>');
     document.write('<td class="rnumber right-align">',colNum,'</td>');
-    document.write('<td>Demand forecast for Smarties at the Windsor DC Jan 20-W2 deviates -22% from last year\'s sales.</td>');
+    document.write('<td class="cstring"><span  class="tooltipped" data-tooltip="',selectedString1,'">',selectedString1,'</span></td>');
     document.write('<td class="status"><span class="badge">Open</span></td>');
     document.write('<td class="date">01/02/2024</td>');
     document.write('<td class="date">01/02/2024</td>');
@@ -230,7 +234,7 @@ function drawSmallTable(){
     document.write('<td class="date">01/02/2024</td>');
     document.write('<td class="boolean center-align"><i class="green-text small material-icons">',Math.random()>0.5?'check_circle':'','</i></td>');
     document.write('<td class="boolean center-align"><i class="green-text small material-icons">',Math.random()>0.5?'check_circle':'','</i></td>');
-    document.write('<td>',randomString[Math.round(Math.random()*7)],'</td>');
+    document.write('<td class="cstring"><span  class="tooltipped" data-tooltip="',selectedString2,'">',selectedString2,'</span></td>');
     document.write('<td class="cnumber right-align">',(Math.random()*1000000).toFixed(2),'</td>');
     document.write('<td class="cnumber right-align">',(Math.random()*1000000).toFixed(2),'</td>');
     document.write('<td class="cnumber right-align">',(Math.random()*1000000).toFixed(2),'</td>');
@@ -243,6 +247,7 @@ function drawSmallTable(){
   document.write('</tbody>');
   
   document.write("</table>");
+
 }
 
 function drawSmallTableOld(){

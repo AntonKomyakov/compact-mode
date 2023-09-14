@@ -128,3 +128,7 @@ i.small {
 #fontSelectorContainer {
   margin-right:20px;
 }
+
+table {
+  min-width:1450px;
+}
