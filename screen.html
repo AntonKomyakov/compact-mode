@@ -9,17 +9,12 @@
   <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
   <link href="css/materialize.css" type="text/css" rel="stylesheet" media="screen,projection"/>
   <link href="css/style.css" type="text/css" rel="stylesheet" media="screen,projection"/>
-  <style>
-    html, body, .section {
-        height:100%;
-    }
-    h5 {
-        font-size: 9rem;
-    }
-  </style>
+  <link href="css/screen.css" type="text/css" rel="stylesheet" media="screen,projection"/>
+
   <!--  Scripts-->
   <script src="https://code.jquery.com/jquery-2.1.1.min.js"></script>
   <script src="js/materialize.js"></script>
+  <script src="js/initscreen.js"></script>
   <script> 
     page="Default";
   </script>
@@ -27,7 +22,8 @@
 <body>
   <div class="section no-pad  valign-wrapper">
     <div class="container center-align">
-      <h5 class="header center black-text"><script>document.write(window.screen.width,"&times;",window.screen.height, "<br />",window.screen.availWidth,"&times;",window.screen.availHeight);</script></script></h5>
+      <h1>Screen resolution</h1>
+      <h5 id="resolutionContainer" class="header center black-text"><script></script></h5>
     </div>
   </div>
 </body>
