@@ -116,8 +116,8 @@ function changeDensity(evt) {
       chipLineHeight = 20;
       cellVPadding = 0;
       cellHPadding = 8;
-      $('#fontSelectorContainer').hide();
-      $('div.switcher-wrapper').hide();
+      $('#fontSelectorContainer').show();
+      $('div.switcher-wrapper').show();
       $('td').css({'font-size':'14px'});
     }
     $('th,td').css({'height':rowHeight+'px', 'line-height':rowHeight+'px', 'padding':cellVPadding+'px '+cellHPadding+'px'});
@@ -331,6 +331,9 @@ function drawNav(iActiveState) {
   var sState1 = '';
   var sState2 = '';
   var sState3 = '';
+  var sState4 = '';
+  var sState5 = '';
+  var sState6 = '';
 
   switch (iActiveState) {
     case 1:
@@ -355,7 +358,7 @@ function drawNav(iActiveState) {
 }
 
 function drawFontSwitcher(iActiveState) {
-  var sState1, sState2, sState3, sState4 = '';
+  var sState1, sState2, sState3, sState4, sState5, sState6, sState7, sState8 = '';
   
   switch (iActiveState) {
     case 1:
@@ -378,10 +381,14 @@ function drawFontSwitcher(iActiveState) {
   <li class="right ' + sState2 + '"><a class="btn-flat btn-small" href="#">11</a></li>\
   <li class="right ' + sState3 + '"><a class="btn-flat btn-small" href="#">12</a></li>\
   <li class="right ' + sState4 + '"><a class="btn-flat btn-small" href="#">14</a></li>\
-  </ul></div>\
+  <li class="right ' + sState5 + '"><a class="btn-flat btn-small" href="#">16</a></li>\
+  <li class="right ' + sState6 + '"><a class="btn-flat btn-small" href="#">18</a></li>\
+  <li class="right ' + sState7 + '"><a class="btn-flat btn-small" href="#">20</a></li>\
+  <li class="right ' + sState8 + '"><a class="btn-flat btn-small" href="#">22</a></li>\
+    </ul></div>\
 ');
 $('ul.font-switcher a').filter(function(index) { return $(this).text() == selectedFont; }).addClass("activated");
 $('ul.font-switcher li a').on('click', setFont);
-$('div.switcher-wrapper').hide();
+$('div.switcher-wrapper').show();
 
 }

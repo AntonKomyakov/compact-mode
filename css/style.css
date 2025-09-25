@@ -15,7 +15,9 @@
 
 html {
   font-size:14px;
-  font-family: Roboto, Arial, Helvetica, sans-serif;
+  font-family: Calibre, Roboto, Arial, Helvetica, sans-serif;
+  font-variant-numeric: tabular-nums;
+  line-height: 1rem;
 }
 
 .container {
